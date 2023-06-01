@@ -1,0 +1,121 @@
+/* 전체 요소에 대한 기본 스타일 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 배경 이미지 설정 */
+body {
+  background: url("../assets/bg.png") center/cover no-repeat;
+}
+
+/* 카드 리스트 스타일 */
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+}
+
+/* 영화 카드 스타일 */
+.movie-card {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12), 0 3px 6px rgba(0, 0, 0, 0.24);
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  justify-self: center;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 평점에 따른 카드 색상 */
+.high-rating {
+  background-color: #73C6B6;
+}
+
+.medium-rating {
+  background-color: #FFD700;
+}
+
+.low-rating {
+  background-color: #e7270d;
+}
+
+/* 호버 효과 - 영화 카드 확대 및 그림자 변경 */
+.movie-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 호버 효과 - 영화 카드 이미지 투명도 조정 */
+.movie-card:hover img {
+  opacity: 0.8;
+}
+
+/* 영화 카드 이미지 스타일 */
+.movie-card img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* 영화 설명 스타일 */
+.movie-card .movie-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  display: none; /* 수정된 부분: 초기에 숨김 */
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-description {
+  display: block; /* 수정된 부분: 호버 시 보이도록 변경 */
+  transform: translateY(0);
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #DCE9E1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+}
+
+/* 검색 스타일 */
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  border-bottom: 1px solid black;
+}
+
+.search label {
+  font-size: 25px;
+}
+
+.search input {
+  margin-left: 20px;
+  min-width: 200px;
+  padding: 5px 10px;
+}
+
+.search button {
+  margin-left: 10px;
+  padding: 5px;
+}
+
+/* 제목 스타일 */
+h3 {
+  margin-bottom: 10px;
+}
